@@ -1,0 +1,20 @@
+一、获取训练数据
+1.将人工标记的验证码放在train_image文件夹下
+2.运行 python train_main.py即可在train文件夹中产生训练数据
+
+二、直接测试
+1.执行python test_main.py将会读取testpic文件夹下的code.png，并进行识别。
+
+三、启动服务：
+运行 verification_main.py即可，下面是整个程序的运行过程 
+程序的大体运行过程：
+第一步：把上传的图片保存到testpic中。
+第二步：预处理图片，去除噪点干扰色条。
+第三步：字符切分，并提取特征放入test文件夹。
+第四步：对特征和已有特征进行运算，获取最相似字符，返回验证码
+
+以上是程序的运行过程，具体你可以查看里面的代码
+
+注意要想保证数据的准确识别，必须增加足够的训练数据在train文件夹中
+
+通过url：http://s.weibo.com/ajax/pincode/pin?type=sass&ts=1387423251可获取新浪微博验证码
